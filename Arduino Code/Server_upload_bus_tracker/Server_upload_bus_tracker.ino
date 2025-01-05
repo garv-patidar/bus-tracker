@@ -6,8 +6,8 @@
 #include <SoftwareSerial.h>
 #include <HTTPClient.h>
 
-const char *ssid = "realme 7 pro";
-const char *password = "9460575212";
+const char *ssid = "------";
+const char *password = "----";
 static const int RXPin = 3, TXPin = 1;
 static const uint32_t GPSBaud = 9600;
 TinyGPSPlus gps;
@@ -22,7 +22,7 @@ double vel = 0;
 unsigned long lastUpdate;
 
 // Define your server details
-const char *serverUrl = "http://192.168.52.21:8000/bustracker/update-location/"; // Adjust port if necessary
+const char *serverUrl = "----"; // Adjust port if necessary
 
 void setup() {
   Serial.begin(115200);
@@ -113,7 +113,7 @@ void sendToServer(int id, double latitude, double longitude, double velocity) {
 
     // Set headers and send POST request
     http.addHeader("Content-Type", "application/json");
-    http.addHeader("Api-Key", "1f5cfd4732022011d574dbb2359986bac1ea8c55");
+    http.addHeader("Api-Key", "");
     
     int httpResponseCode = http.POST(payload);
 
